@@ -4,7 +4,7 @@
     "connector": "memory"
   },
   "mysqlDs": {
-    "host": "demo.strongloop.com",
+    "host": "localhost",
     "port": 3306,
     "database": "getting_started_intermediate",
     "username": "demo",
@@ -13,12 +13,35 @@
     "connector": "mysql"
   },
   "mongoDs": {
-    "host": "demo.strongloop.com",
+    "host": "localhost",
     "port": 27017,
     "database": "getting_started_intermediate",
     "username": "demo",
     "password": "L00pBack",
     "name": "mongoDs",
     "connector": "mongodb"
+  },
+  "restDS": {
+    "name": "restDS",
+    "connector": "rest",
+    "debug": false,
+    "options": {
+      "headers": {
+        "accept": "application/json",
+        "content-type": "application/json"
+      },
+      "strictSSL": false
+    },
+    "operations": [
+      {
+        "template": {
+          "method": "GET",
+          "url": "http://qc.michaelkors.co.uk:7001/rest/model/com/mk/commerce/catalog/HomePageActor/getMegamenu"
+        },
+        "functions": {
+          "getMegaMenu": []
+        }
+      }
+    ]
   }
 }
